@@ -34,7 +34,7 @@
     }
 
     .card{
-  width:420px;
+  width:920px;
   max-width:100%;
   border-radius:18px;
   padding:28px;
@@ -46,10 +46,61 @@
   gap:22px;
 
     }
-
+@media (max-width: 650px) {
+  .mines-grid.cols-3,
+  .mines-grid.cols-5,
+  .mines-grid.cols-7,
+  .mines-grid.cols-9 {
+    width: 98vw;
+    gap: 4px;
+    padding: 2px;
+  }
+  .mines-grid.cols-3 .mine-cell,
+  .mines-grid.cols-5 .mine-cell,
+  .mines-grid.cols-7 .mine-cell,
+  .mines-grid.cols-9 .mine-cell {
+    border-radius: 10px;
+    min-width: 22px;
+    min-height: 22px;
+    font-size: 11px;
+    box-shadow: 0 0 0 1px #ff9800, 0 1px 3px #ff980044, inset 0 1px 2px rgba(0,0,0,0.3);
+    border-width: 1px;
+    padding: 0;
+  }
+}
+    /* Адаптив для мобильных устройств */
+    @media (max-width: 880px) {
+      body { padding: 8px; }
+      .card { max-width: 100vw; width: 100%; padding: 10px; grid-template-columns: 1fr; }
+      .main { width: 100%; padding: 8px; gap: 8px; }
+      .aside { padding: 8px; gap: 8px; }
+      h1 { font-size: 18px; }
+      .badge { width: 36px; height: 36px; font-size: 15px; }
+      .die { width: 60px; height: 60px; font-size: 22px; }
+      button { font-size: 15px; padding: 8px 10px; }
+      .amount-input { width: 80px; }
+      .chip { font-size: 12px; padding: 4px 8px; }
+      .foot { font-size: 10px; }
+      .controls { gap: 6px; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 2px; }
+      .card { max-width: 100vw; width: 100%; padding: 2px; }
+      .main { width: 100%; padding: 2px; gap: 4px; }
+      .aside { padding: 2px; gap: 4px; }
+      h1 { font-size: 14px; }
+      .badge { width: 24px; height: 24px; font-size: 11px; }
+      .die { width: 36px; height: 36px; font-size: 14px; }
+      button { font-size: 12px; padding: 6px 8px; }
+      .amount-input { width: 60px; }
+      .chip { font-size: 10px; padding: 2px 6px; }
+      .foot { font-size: 9px; }
+      .controls { gap: 3px; }
+      .steps { gap: 4px; }
+    }
     /* Left area (main steps) */
     .main{
-      padding:380px;
+      padding:980px;
       background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
       border-radius:12px;
   min-height:180px;
@@ -2760,3 +2811,4 @@ nextBtn.addEventListener("click", () => {
 </body>
 
 </html>
+
