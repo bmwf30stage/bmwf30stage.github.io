@@ -32,80 +32,21 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
-   .main{
-      padding:8px;
+
+  
+    /* Left area (main steps) */
+    .main{
+      padding:18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-      border-radius:7px;
-      min-height:90px;
+      border-radius:12px;
+  min-height:180px;
       display:flex;
       flex-direction:column;
-      gap:7px;
-      width: 180px;
+      gap:18px;
+      width: 380px;
     }
   .card{
-      width:200px;
-      max-width:100%;
-      border-radius:9px;
-      padding:10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow: 0 4px 10px rgba(2,6,23,0.3), inset 0 1px 0 rgba(255,255,255,0.02);
-      backdrop-filter: blur(3px) saturate(110%);
-      display:block;
-      margin:0 auto;
-  }
-    .aside{
-      padding:8px;
-      border-radius:7px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
-      display:flex;
-      flex-direction:column;
-      gap:7px;
-      align-items:flex-start;
-      width:100%;
-      box-sizing: border-box;
-    }
-
-    header.site-head{
-      display:flex;align-items:center;gap:7px;justify-content:space-between
-    }
-    .logo{
-      display:flex;align-items:center;gap:6px
-    }
-    .badge{
-      width:26px;height:26px;border-radius:5px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021225;box-shadow:0 2px 6px rgba(32,64,96,0.18)
-    }
-    h1{font-size:10px;margin:0}
-    p.lead{margin:0;color:var(--muted);font-size:13px}
-
-    /* Steps navigation */
-    .steps{
-      display:flex;gap:4px;align-items:center;margin-top:1px
-    }
-    .step-dot{width:5px;height:5px;border-radius:3px;background:var(--soft);opacity:0.6}
-    .step-dot.active{background:linear-gradient(90deg,#7dd3fc,#7cffa0);opacity:1;box-shadow:0 6px 20px rgba(40,180,200,0.12)}
-    .step-dot.hidden{display:none}
-
-    /* Step content */
-    .step{display:none;flex-direction:column;gap:12px}
-    .step.active{display:flex}
-
-    label{font-size:8px;color:var(--muted);display:block;margin-bottom:3px}
-    input[type="text"], input[type="number"], select{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:5px 6px;border-radius:5px;color:inherit;font-size:8px;outline:none
-    }
-  .row{display:flex;gap:6px;align-items:center}
-
-    /* Amount controls */
-  .amount-box{display:flex;gap:6px;align-items:center}
-  .amount-input{width:40px}
-    input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:8px;background:linear-gradient(90deg,#2dd4bf,#60a5fa);outline:none}
-
-    /* Buttons */
-    .controls{display:flex;gap:5px;margin-top:auto}
-  button{border:0;padding:5px 7px;border-radius:5px;font-weight:600;cursor:pointer;transition:transform 0.18s cubic-bezier(.2,.8,.2,1), background 0.22s;font-size:8px;}
-  
-    .card{
-  width:920px;
+  width:420px;
   max-width:100%;
   border-radius:18px;
   padding:28px;
@@ -116,69 +57,6 @@
   grid-template-columns: 1fr 380px;
   gap:22px;
 
-    }
-@media (max-width: 650px) {
-  .mines-grid.cols-3,
-  .mines-grid.cols-5,
-  .mines-grid.cols-7,
-  .mines-grid.cols-9 {
-    width: 98vw;
-    gap: 4px;
-    padding: 2px;
-  }
-  .mines-grid.cols-3 .mine-cell,
-  .mines-grid.cols-5 .mine-cell,
-  .mines-grid.cols-7 .mine-cell,
-  .mines-grid.cols-9 .mine-cell {
-    border-radius: 10px;
-    min-width: 22px;
-    min-height: 22px;
-    font-size: 11px;
-    box-shadow: 0 0 0 1px #ff9800, 0 1px 3px #ff980044, inset 0 1px 2px rgba(0,0,0,0.3);
-    border-width: 1px;
-    padding: 0;
-  }
-}
-    /* Адаптив для мобильных устройств */
-    @media (max-width: 880px) {
-      body { padding: 8px; }
-      .card { max-width: 100vw; width: 100%; padding: 10px; grid-template-columns: 1fr; }
-      .main { width: 100%; padding: 8px; gap: 8px; }
-      .aside { padding: 8px; gap: 8px; }
-      h1 { font-size: 18px; }
-      .badge { width: 36px; height: 36px; font-size: 15px; }
-      .die { width: 60px; height: 60px; font-size: 22px; }
-      button { font-size: 15px; padding: 8px 10px; }
-      .amount-input { width: 80px; }
-      .chip { font-size: 12px; padding: 4px 8px; }
-      .foot { font-size: 10px; }
-      .controls { gap: 6px; }
-    }
-    @media (max-width: 480px) {
-      body { padding: 2px; }
-      .card { max-width: 100vw; width: 100%; padding: 2px; }
-      .main { width: 100%; padding: 2px; gap: 4px; }
-      .aside { padding: 2px; gap: 4px; }
-      h1 { font-size: 14px; }
-      .badge { width: 24px; height: 24px; font-size: 11px; }
-      .die { width: 36px; height: 36px; font-size: 14px; }
-      button { font-size: 12px; padding: 6px 8px; }
-      .amount-input { width: 60px; }
-      .chip { font-size: 10px; padding: 2px 6px; }
-      .foot { font-size: 9px; }
-      .controls { gap: 3px; }
-      .steps { gap: 4px; }
-    }
-    /* Left area (main steps) */
-    .main{
-      padding:980px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-      border-radius:12px;
-  min-height:180px;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      width: 920px;
     }
 
     .aside{
@@ -2880,7 +2758,4 @@ nextBtn.addEventListener("click", () => {
 });
   </script>
 </body>
-
 </html>
-
-
