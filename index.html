@@ -1,3 +1,4 @@
+<div id="userNameWarning" style="color:#ff3a3a;font-size:13px;margin-top:4px;display:none;">Введите имя, чтобы продолжить</div>
 <!doctype html>
 <html lang="en">
 <head>
@@ -561,6 +562,22 @@ width:110px;
           }
         </style>
         <script>
+// Показывать предупреждение, если имя не введено при первом заходе
+document.addEventListener('DOMContentLoaded', function() {
+  var userNameInput = document.getElementById('userNameInput');
+  var userNameWarning = document.getElementById('userNameWarning');
+  if (userNameInput && userNameWarning) {
+    function checkName() {
+      if (!userNameInput.value.trim()) {
+        userNameWarning.style.display = 'block';
+      } else {
+        userNameWarning.style.display = 'none';
+      }
+    }
+    userNameInput.addEventListener('input', checkName);
+    checkName();
+  }
+});
 // Динамическая высота .card для Turbo Mines (с применением !important)
 function setCardMinHeightByGrid() {
   const card = document.querySelector('.card');
@@ -2761,4 +2778,3 @@ nextBtn.addEventListener("click", () => {
   </script>
 </body>
 </html>
-
