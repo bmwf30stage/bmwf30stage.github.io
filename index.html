@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=0.5, user-scalable=yes" />
   <title>VAVADA BOT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="images/photovklad.png" type="image/jpeg">
+  <link rel="icon" href="images/phh.png" type="image/jpeg">
   <style>
     :root{
       --bg-1: #0f1722; /* deep navy */
@@ -562,6 +562,18 @@ width:110px;
           }
         </style>
         <script>
+// Всегда показывать предупреждение при первом заходе, если ник пустой
+document.addEventListener('DOMContentLoaded', function() {
+  var userNameInput = document.getElementById('userNameInput');
+  var userNameWarning = document.getElementById('userNameWarning');
+  var firstVisit = localStorage.getItem('vavada_first_visit');
+  if (!firstVisit) {
+    localStorage.setItem('vavada_first_visit', '1');
+    if (userNameInput && userNameWarning && !userNameInput.value.trim()) {
+      userNameWarning.style.display = 'block';
+    }
+  }
+});
 // Показывать предупреждение, если имя не введено при первом заходе
 document.addEventListener('DOMContentLoaded', function() {
   var userNameInput = document.getElementById('userNameInput');
@@ -1404,7 +1416,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (savedName && savedName.trim().length > 0) {
     usernameInput.value = savedName;
     nextBtn.disabled = false;
-    nameChecked = true;
+    nameChecked = true; 
     if (nameHint) nameHint.style.display = 'none';
     if (nameCheckInline) nameCheckInline.style.display = 'none';
     // поле всегда доступно для редактирования
@@ -2775,6 +2787,7 @@ nextBtn.addEventListener("click", () => {
     if (d4) d4.classList.add('active');
   }
 });
+
   </script>
 </body>
 </html>
